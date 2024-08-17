@@ -1,0 +1,4 @@
+xvlog ./stdp.v ./dpbram.v ./stdp_tb.v
+xelab stdp_tb -debug wave -s stdp_tb
+#xsim stdp_tb -R 
+xsim stdp_tb -gui -wdb simulate_xsim_stdp_tb.wdb 

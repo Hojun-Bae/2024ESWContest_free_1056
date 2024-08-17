@@ -1,0 +1,4 @@
+xvlog ./updateNeuron.v ./postBuffer.v ./spbram.v ./updateNeuron_tb.v
+xelab updateNeuron_tb -debug wave -s updateNeuron_tb
+#xsim updateNeuron_tb -R 
+xsim updateNeuron_tb -gui -wdb simulate_xsim_updateNeuron_tb.wdb 

@@ -1,0 +1,4 @@
+xvlog ./synapse.v ./spbram.v ./synapse_tb.v
+xelab synapse_tb -debug wave -s synapse_tb
+#xsim synapse_tb -R 
+xsim synapse_tb -gui -wdb simulate_xsim_synapse_tb.wdb 

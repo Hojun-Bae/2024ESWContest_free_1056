@@ -1,0 +1,4 @@
+xvlog ./dpbram.v ./preBuffer.v ./spbram.v ./lfsr.v ./preBuffer_tb.v
+xelab preBuffer_tb -debug wave -s preBuffer_tb
+#xsim preBuffer_tb -R 
+xsim preBuffer_tb -gui -wdb simulate_xsim_preBuffer_tb.wdb 

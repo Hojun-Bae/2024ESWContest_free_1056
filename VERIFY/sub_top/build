@@ -1,0 +1,4 @@
+xvlog ./findMax.v ./dpbram.v ./lfsr.v ./postBuffer.v ./preBuffer.v ./spbram.v ./stdp.v ./sub_top.v ./top.v ./top_tb.v ./synapse.v ./updateNeuron.v ./controller.v
+xelab top_tb -debug wave -s top_tb
+#xsim top_tb -R 
+xsim top_tb -gui -wdb simulate_xsim_top_tb.wdb 
