@@ -5,10 +5,11 @@ This README provides an overview of the directory structure and RTL hierarchy fo
 ## Directory Structure
 
 ### SW (C Implementation of SNN Algorithm)
-- **inf.c**: Inference code (after learning).
-- **Makefile**: Makefile for building the project.
-- **snn.c**: Learning code.
-- **snn.h**: Header file.
+- **inf.c**: Golden Reference: Inference code (after learning).
+- **Makefile**: Golden Reference: Makefile for building the project.
+- **main.c**: Firmware main code that drives ZYNQ boards.
+- **snn.c**: Golden Reference: Learning code.
+- **snn.h**: Golden Reference: Header file.
 
 ### HW (Verilog HDL RTL Code)
 - **controller.v**: System controller module.
