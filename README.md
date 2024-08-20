@@ -1,148 +1,148 @@
 // File tree
 SW                        // SNN algorithm C implementation
-┣ inf.c                   // inference code (after learn)
-┣ Makefile                // Makefile
-┣ snn.c                   // learn code
-┗ snn.h                   // header file
+ㅏ inf.c                   // inference code (after learn)
+ㅏ Makefile                // Makefile
+ㅏ snn.c                   // learn code
+ㄴ snn.h                   // header file
 
 HW                        // Verilog HDL RTL code
-┣ controller.v            // system controller module
-┣ dpbram.v                // true dual port bram code
-┣ findMax.v               // finding max module
-┣ hojun.v                 // top hierarchy
-┣ lfsr.v                  // linear feedback shift register (pseudo random gen)
-┣ myip_v1_0.v             // AXI4-lite slave wrapper
-┣ myip_v1_0_S00_AXI.v     // AXI4-lite slave ip
-┣ postBuffer.v            // post spike buffer
-┣ preBuffer.v             // pre spike buffer
-┣ snnTop.v                // snn top module including controller
-┣ spbram.v                // single port bram code
-┣ stdp.v                  // stdp 
-┣ sub_top.v               // single core
-┣ synapse.v               // synaptic accumulation
-┣ top.v                   // snn top module not including controller
-┗ updateNeuron.v          // neuron core
+ㅏ controller.v            // system controller module
+ㅏ dpbram.v                // true dual port bram code
+ㅏ findMax.v               // finding max module
+ㅏ hojun.v                 // top hierarchy
+ㅏ lfsr.v                  // linear feedback shift register (pseudo random gen)
+ㅏ myip_v1_0.v             // AXI4-lite slave wrapper
+ㅏ myip_v1_0_S00_AXI.v     // AXI4-lite slave ip
+ㅏ postBuffer.v            // post spike buffer
+ㅏ preBuffer.v             // pre spike buffer
+ㅏ snnTop.v                // snn top module including controller
+ㅏ spbram.v                // single port bram code
+ㅏ stdp.v                  // stdp 
+ㅏ sub_top.v               // single core
+ㅏ synapse.v               // synaptic accumulation
+ㅏ top.v                   // snn top module not including controller
+ㄴ updateNeuron.v          // neuron core
 
 VERIFY                    // RTL verification code
-┣ hojun_sim.srcs          // total system verification           
-┃ ┣ sim_1
-┃ ┃ ┗ new
-┃ ┃ ┃ ┣ mnist.txt         // mnist data
-┃ ┃ ┃ ┗ top_tb.v          // testbench
-┃ ┗ sources_1
-┃ ┃ ┗ HW                  // RTL code
-┃ ┃ ┃ ┣ controller.v
-┃ ┃ ┃ ┣ dpbram.v
-┃ ┃ ┃ ┣ findMax.v
-┃ ┃ ┃ ┣ lfsr.v
-┃ ┃ ┃ ┣ postBuffer.v
-┃ ┃ ┃ ┣ preBuffer.v
-┃ ┃ ┃ ┣ spbram.v
-┃ ┃ ┃ ┣ stdp.v
-┃ ┃ ┃ ┣ sub_top.v
-┃ ┃ ┃ ┣ synapse.v
-┃ ┃ ┃ ┣ top.v
-┃ ┃ ┃ ┗ updateNeuron.v
-┣ preBuffer               // pre spike buffer verification
-┃ ┣ ref_c                 // golden reference
-┃ ┃ ┣ input_spike.txt
-┃ ┃ ┣ lfsr.txt
-┃ ┃ ┣ Makefile
-┃ ┃ ┣ mnist.txt
-┃ ┃ ┣ pixel.txt
-┃ ┃ ┣ test.c              // golden reference SW code
-┃ ┃ ┣ test.o
-┃ ┃ ┣ test.out
-┃ ┃ ┗ x_trace.txt
-┃ ┣ build                 // vivado RTL sim build
-┃ ┣ clean
-┃ ┣ dpbram.v
-┃ ┣ input_spike.txt
-┃ ┣ lfsr.txt
-┃ ┣ lfsr.v
-┃ ┣ Makefile
-┃ ┣ preBuffer.v
-┃ ┣ preBuffer_tb.v        // testbench
-┃ ┗ spbram.v
-┣ stdp                    // stdp verification
-┃ ┣ golden_ref            // golden reference
-┃ ┃ ┣ Makefile            // Makefile
-┃ ┃ ┣ test
-┃ ┃ ┗ test.c              // golden reference SW code
-┃ ┣ build
-┃ ┣ clean
-┃ ┣ dpbram.v
-┃ ┣ stdp.v
-┃ ┣ stdp_tb.v             // testbench
-┃ ┗ v_result.txt
-┣ sub_top                 // single core verification
-┃ ┣ build
-┃ ┣ clean
-┃ ┣ controller.v
-┃ ┣ dpbram.v
-┃ ┣ exc_conductance.csv
-┃ ┣ exc_membrane.csv
-┃ ┣ exc_threshold.csv
-┃ ┣ findMax.v
-┃ ┣ inh_conductance.csv
-┃ ┣ input_spike.csv
-┃ ┣ lfsr.v
-┃ ┣ mnist.txt
-┃ ┣ postBuffer.v
-┃ ┣ preBuffer.v
-┃ ┣ spbram.v
-┃ ┣ stdp.v
-┃ ┣ sub_top.v
-┃ ┣ sub_top_tb.v          // testbench
-┃ ┣ synapse.v
-┃ ┣ top.v
-┃ ┣ top_tb.v
-┃ ┗ updateNeuron.v
-┣ synapse                 // synaptic accumulation verification
-┃ ┣ golden_ref            // golden reference
-┃ ┃ ┣ Makefile
-┃ ┃ ┣ ref_c_rand_input_node.txt
-┃ ┃ ┣ ref_c_rand_input_wegt.txt
-┃ ┃ ┣ ref_c_result.txt
-┃ ┃ ┣ test
-┃ ┃ ┣ test.c              // golden reference SW code
-┃ ┃ ┗ test2.c
-┃ ┣ build
-┃ ┣ clean
-┃ ┣ init_weight.txt
-┃ ┣ Makefile
-┃ ┣ spbram.v
-┃ ┣ synapse.v
-┃ ┗ synapse_tb.v          // testbench
-┗ updateNeuron            // neuron core verification
-┃ ┣ data
-┃ ┃ ┣ exc_conductance.csv
-┃ ┃ ┣ exc_membrane.csv
-┃ ┃ ┣ exc_threshold.csv
-┃ ┃ ┣ inh_conductance.csv
-┃ ┃ ┣ y1_trace.csv
-┃ ┃ ┣ y2_trace.csv
-┃ ┃ ┗ y2_trace_buf.csv
-┃ ┣ build
-┃ ┣ clean
-┃ ┣ Makefile
-┃ ┣ postBuffer.v
-┃ ┣ spbram.v
-┃ ┣ updateNeuron.v
-┃ ┗ updateNeuron_tb.v     // testbench
+ㅏ hojun_sim.srcs          // total system verification           
+ㅣ ㅏ sim_1
+ㅣ ㅣ ㄴ new
+ㅣ ㅣ ㅣ ㅏ mnist.txt         // mnist data
+ㅣ ㅣ ㅣ ㄴ top_tb.v          // testbench
+ㅣ ㄴ sources_1
+ㅣ ㅣ ㄴ HW                  // RTL code
+ㅣ ㅣ ㅣ ㅏ controller.v
+ㅣ ㅣ ㅣ ㅏ dpbram.v
+ㅣ ㅣ ㅣ ㅏ findMax.v
+ㅣ ㅣ ㅣ ㅏ lfsr.v
+ㅣ ㅣ ㅣ ㅏ postBuffer.v
+ㅣ ㅣ ㅣ ㅏ preBuffer.v
+ㅣ ㅣ ㅣ ㅏ spbram.v
+ㅣ ㅣ ㅣ ㅏ stdp.v
+ㅣ ㅣ ㅣ ㅏ sub_top.v
+ㅣ ㅣ ㅣ ㅏ synapse.v
+ㅣ ㅣ ㅣ ㅏ top.v
+ㅣ ㅣ ㅣ ㄴ updateNeuron.v
+ㅏ preBuffer               // pre spike buffer verification
+ㅣ ㅏ ref_c                 // golden reference
+ㅣ ㅣ ㅏ input_spike.txt
+ㅣ ㅣ ㅏ lfsr.txt
+ㅣ ㅣ ㅏ Makefile
+ㅣ ㅣ ㅏ mnist.txt
+ㅣ ㅣ ㅏ pixel.txt
+ㅣ ㅣ ㅏ test.c              // golden reference SW code
+ㅣ ㅣ ㅏ test.o
+ㅣ ㅣ ㅏ test.out
+ㅣ ㅣ ㄴ x_trace.txt
+ㅣ ㅏ build                 // vivado RTL sim build
+ㅣ ㅏ clean
+ㅣ ㅏ dpbram.v
+ㅣ ㅏ input_spike.txt
+ㅣ ㅏ lfsr.txt
+ㅣ ㅏ lfsr.v
+ㅣ ㅏ Makefile
+ㅣ ㅏ preBuffer.v
+ㅣ ㅏ preBuffer_tb.v        // testbench
+ㅣ ㄴ spbram.v
+ㅏ stdp                    // stdp verification
+ㅣ ㅏ golden_ref            // golden reference
+ㅣ ㅣ ㅏ Makefile            // Makefile
+ㅣ ㅣ ㅏ test
+ㅣ ㅣ ㄴ test.c              // golden reference SW code
+ㅣ ㅏ build
+ㅣ ㅏ clean
+ㅣ ㅏ dpbram.v
+ㅣ ㅏ stdp.v
+ㅣ ㅏ stdp_tb.v             // testbench
+ㅣ ㄴ v_result.txt
+ㅏ sub_top                 // single core verification
+ㅣ ㅏ build
+ㅣ ㅏ clean
+ㅣ ㅏ controller.v
+ㅣ ㅏ dpbram.v
+ㅣ ㅏ exc_conductance.csv
+ㅣ ㅏ exc_membrane.csv
+ㅣ ㅏ exc_threshold.csv
+ㅣ ㅏ findMax.v
+ㅣ ㅏ inh_conductance.csv
+ㅣ ㅏ input_spike.csv
+ㅣ ㅏ lfsr.v
+ㅣ ㅏ mnist.txt
+ㅣ ㅏ postBuffer.v
+ㅣ ㅏ preBuffer.v
+ㅣ ㅏ spbram.v
+ㅣ ㅏ stdp.v
+ㅣ ㅏ sub_top.v
+ㅣ ㅏ sub_top_tb.v          // testbench
+ㅣ ㅏ synapse.v
+ㅣ ㅏ top.v
+ㅣ ㅏ top_tb.v
+ㅣ ㄴ updateNeuron.v
+ㅏ synapse                 // synaptic accumulation verification
+ㅣ ㅏ golden_ref            // golden reference
+ㅣ ㅣ ㅏ Makefile
+ㅣ ㅣ ㅏ ref_c_rand_input_node.txt
+ㅣ ㅣ ㅏ ref_c_rand_input_wegt.txt
+ㅣ ㅣ ㅏ ref_c_result.txt
+ㅣ ㅣ ㅏ test
+ㅣ ㅣ ㅏ test.c              // golden reference SW code
+ㅣ ㅣ ㄴ test2.c
+ㅣ ㅏ build
+ㅣ ㅏ clean
+ㅣ ㅏ init_weight.txt
+ㅣ ㅏ Makefile
+ㅣ ㅏ spbram.v
+ㅣ ㅏ synapse.v
+ㅣ ㄴ synapse_tb.v          // testbench
+ㄴ updateNeuron            // neuron core verification
+ㅣ ㅏ data
+ㅣ ㅣ ㅏ exc_conductance.csv
+ㅣ ㅣ ㅏ exc_membrane.csv
+ㅣ ㅣ ㅏ exc_threshold.csv
+ㅣ ㅣ ㅏ inh_conductance.csv
+ㅣ ㅣ ㅏ y1_trace.csv
+ㅣ ㅣ ㅏ y2_trace.csv
+ㅣ ㅣ ㄴ y2_trace_buf.csv
+ㅣ ㅏ build
+ㅣ ㅏ clean
+ㅣ ㅏ Makefile
+ㅣ ㅏ postBuffer.v
+ㅣ ㅏ spbram.v
+ㅣ ㅏ updateNeuron.v
+ㅣ ㄴ updateNeuron_tb.v     // testbench
 
 // RTL hierarchy
 hojun.v
-┣ myip_v1_0.v     
-┃ ┗ myip_v1_0_S00_AXI.v  
-┣ snnTop.v  
-┃ ┣ controller.v 
-┃ ┗ top.v
-┃ ┃ ┣ findMax.v 
-┃ ┃ ┣ lfsr.v 
-┃ ┃ ┣ preBuffer.v  
-┃ ┃ ┣ sub_top.v 
-┃ ┃ ┃ ┣ postBuffer.v
-┃ ┃ ┃ ┣ synapse.v 
-┃ ┃ ┃ ┣ updateNeuron.v    
-┗ ┗ ┗ ┗ stdp.v 
+ㅏ myip_v1_0.v     
+ㅣ ㄴ myip_v1_0_S00_AXI.v  
+ㅏ snnTop.v  
+ㅣ ㅏ controller.v 
+ㅣ ㄴ top.v
+ㅣ ㅣ ㅏ findMax.v 
+ㅣ ㅣ ㅏ lfsr.v 
+ㅣ ㅣ ㅏ preBuffer.v  
+ㅣ ㅣ ㅏ sub_top.v 
+ㅣ ㅣ ㅣ ㅏ postBuffer.v
+ㅣ ㅣ ㅣ ㅏ synapse.v 
+ㅣ ㅣ ㅣ ㅏ updateNeuron.v    
+ㄴ ㄴ ㄴ ㄴ stdp.v 
